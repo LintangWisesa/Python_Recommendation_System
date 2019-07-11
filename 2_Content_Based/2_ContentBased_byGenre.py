@@ -25,15 +25,19 @@ dfGame = dfGame[[ 'Name', 'Platform', 'Genre' ]]
 # =============================================
 # count genre
 from sklearn.feature_extraction.text import CountVectorizer
-model = CountVectorizer()
+model = CountVectorizer(
+    # ngram_range=(1,2),   # min 2 kata, max 2 kata
+    tokenizer = lambda i: i.split('😎'),
+    analyzer = 'word',
+)
 
 matrixGenre = model.fit_transform(dfGame['Genre'])
 Genre = model.get_feature_names()
 jumlahGenre = len(Genre)
 eventGenre = matrixGenre.toarray()
 
-# print(Genre)
-# print(jumlahGenre)
+print(Genre)
+print(jumlahGenre)
 # print(eventGenre)
 
 # =============================================
