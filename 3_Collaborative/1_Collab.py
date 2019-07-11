@@ -20,7 +20,7 @@ print(dfCorr)
 # testing
 
 saya = [
-    ('sinetron_C', 5), ('sinetron_A', 4)
+    ('sinetron_A', 1), ('kartun_A', 5)
 ]
 
 skorSama = pd.DataFrame()
